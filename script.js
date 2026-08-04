@@ -1,42 +1,34 @@
-// Smooth Scroll Function
-function scrollToSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+// script.js - Pemutar Musik Aman & Animasi
+var myAudio = document.getElementById("myAudio");
+var musicBtn = document.getElementById("music-btn");
+
+function toggleMusic() {
+  if (myAudio.paused) {
+    myAudio.play();
+    musicBtn.innerHTML = "❚❚ Pause"; // Ganti jadi Pause
+    musicBtn.style.background = "#ffcccc"; // Warna soft
+    musicBtn.style.color = "#1a0a0a";
+  } else {
+    myAudio.pause();
+    musicBtn.innerHTML = "▶ Play"; // Ganti jadi Play
+    musicBtn.style.background = "#ff4d4d"; // Warna merah
+    musicBtn.style.color = "white";
   }
 }
 
-// Background Music Controller
-const bgMusic = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicBtn');
-const musicStatus = document.querySelector('.music-status');
+// Menangani error jika file lagu tidak ditemukan
+myAudio.onerror = function() {
+  console.log("Error: File lagu song.mp3 tidak ditemukan!");
+  musicBtn.innerHTML = "Song Error";
+  musicBtn.disabled = true;
+};
 
-if (musicBtn && bgMusic) {
-  musicBtn.addEventListener('click', () => {
-    if (bgMusic.paused) {
-      bgMusic.play();
-      musicBtn.textContent = '⏸ Pause';
-      if (musicStatus) musicStatus.textContent = 'Playing';
-    } else {
-      bgMusic.pause();
-      musicBtn.textContent = '▶ Play';
-      if (musicStatus) musicStatus.textContent = 'Paused';
+// Menangani error jika file chibi tidak ditemukan
+document.addEventListener("DOMContentLoaded", function() {
+    var chibiImg = document.querySelector(".chibi-img");
+    if (chibiImg) {
+        chibiImg.onerror = function() {
+            this.src = "https://via.placeholder.com/200?text=Chibi+Gagal"; // Gambar sementara
+        };
     }
-  });
-}
-
-// Easter Egg Interactive Button
-const easterBtn = document.getElementById('easterBtn');
-const easterMessage = document.getElementById('easterMessage');
-
-if (easterBtn && easterMessage) {
-  easterBtn.addEventListener('click', () => {
-    if (easterMessage.style.display === 'block') {
-      easterMessage.style.display = 'none';
-      easterBtn.textContent = 'Click me! 🎁';
-    } else {
-      easterMessage.style.display = 'block';
-      easterBtn.textContent = 'Tutup ❌';
-    }
-  });
-}
+});

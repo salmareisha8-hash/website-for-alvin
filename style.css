@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css - Perbaikan Total Animasi */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ body {
 h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
-    color: #ff4d4d; /* Merah cerah */
+    color: #ff4d4d;
     margin-top: 20px;
 }
 
@@ -40,36 +40,33 @@ h2.section-title {
     margin-bottom: 40px;
 }
 
-/* Animasi untuk Chibi */
+/* --- Chibi & Animasi Floating --- */
 .chibi-img {
     max-width: 250px;
     border-radius: 50%;
     border: 5px solid #ffcccc;
     box-shadow: 0 0 20px rgba(255, 102, 102, 0.5);
+    /* Terapkan animasi floating */
+    animation: floating 3s ease-in-out infinite; 
+}
+
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }
 }
 
 .opening-content {
     text-align: center;
 }
 
-.scroll-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* About Section */
-.about-card {
+/* About & Letter Card */
+.about-card, .letter-card {
     background-color: #260d0d;
     padding: 30px;
     border-radius: 20px;
-    display: inline-block;
     border: 1px solid #3d1a1a;
+    display: inline-block;
 }
 
 .about-card ul {
@@ -95,12 +92,8 @@ h2.section-title {
     padding: 15px 15px 25px 15px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    transform: rotate(-2deg); /* Aesthetic tilt */
+    transform: rotate(-2deg);
     transition: transform 0.3s ease;
-}
-
-.polaroid:nth-child(even) {
-    transform: rotate(3deg);
 }
 
 .polaroid:hover {
@@ -111,7 +104,6 @@ h2.section-title {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border: 1px solid #ddd;
 }
 
 .polaroid .caption {
@@ -119,59 +111,6 @@ h2.section-title {
     color: #333;
     font-size: 0.9rem;
     margin-top: 15px;
-    text-align: left;
-    line-height: 1.4;
-}
-
-/* Journey Section */
-.timeline {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.checkpoint {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.checkpoint .icon {
-    font-size: 2rem;
-    margin-right: 20px;
-}
-
-.checkpoint .time {
-    font-weight: 600;
-    color: #ffcccc;
-}
-
-.checkpoint .desc {
-    color: #ffe6e6;
-}
-
-/* Letter Section */
-.letter-card {
-    background-color: #260d0d;
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid #3d1a1a;
-    max-width: 800px;
-}
-
-.letter-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #ffe6e6;
-}
-
-.signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2rem;
-    color: #ff4d4d !important;
-    text-align: right;
-    margin-top: 30px;
 }
 
 /* Music Player Style */
@@ -188,12 +127,6 @@ h2.section-title {
     border: 1px solid #3d1a1a;
 }
 
-.song-title {
-    color: #ffcccc;
-    font-size: 0.8rem;
-    margin-right: 10px;
-}
-
 #music-btn {
     background: #ff4d4d;
     color: white;
@@ -203,23 +136,7 @@ h2.section-title {
     cursor: pointer;
 }
 
-/* ----- ANIMASI-ANIMASI UTAMA ----- */
-
-/* 1. Animasi Mengambang (Floating) untuk Chibi */
-.floating {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-    0% { transform: translate(0, 0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }
-}
-
-/* 2. Animasi Muncul Perlahan (Fade In) saat Scroll */
+/* --- Animasi Fade In (Saat Scroll) --- */
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 2s ease-in forwards;
@@ -229,4 +146,3 @@ h2.section-title {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-   

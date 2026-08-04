@@ -1,18 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Apin ❤️</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Alvin ♡</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Website For Alvin ❤️</h1>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music/song.mp3" type="audio/mpeg">
+  </audio>
 
-<script src="script.js"></script>
+  <!-- Floating Music Player Widget -->
+  <div class="music-player">
+    <div class="music-info">
+      <span class="song-title">Lauv - I Like Me Better</span>
+      <span class="music-status">Paused</span>
+    </div>
+    <button id="musicBtn" class="music-btn" aria-label="Toggle Music">▶ Play</button>
+  </div>
 
+  <!-- 1. OPENING PAGE -->
+  <section class="hero-section" id="opening">
+    <div class="chinese-seal">愛</div>
+    <div class="hero-content">
+      <div class="chibi-frame">
+        <img src="assets/chibi/couple.png" alt="Chibi Couple" onerror="this.style.display='none'">
+      </div>
+      <h1 class="hero-title">For Alvin ♡</h1>
+      <p class="hero-subtitle">Happy (belated) Boyfriend Day 💌</p>
+      <button class="btn-primary" onclick="scrollToSection('about')">Click me! ♡</button>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT YOU -->
+  <section class="section" id="about">
+    <h2 class="section-title">About You <span class="heart-icon">♡</span></h2>
+    <div class="about-container">
+      <div class="chibi-side">
+        <img src="assets/chibi/about.png" alt="Chibi About" onerror="this.style.display='none'">
+      </div>
+      <div class="about-card">
+        <ul class="about-list">
+          <li>Kamu selalu sabar</li>
+          <li>Kamu bikin aku ketawa</li>
+          <li>Kamu perhatian</li>
+          <li>Kamu selalu ada</li>
+          <li>Kamu... kamu... kamu! ♡</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OUR MOMENTS (GALERI) -->
+  <section class="section" id="moments">
+    <h2 class="section-title">Our Moments <span class="heart-icon">♡</span></h2>
+    <div class="gallery-grid">
+      <div class="polaroid">
+        <img src="assets/img/moment1.jpg" alt="Moment 1" onerror="this.style.display='none'">
+        <p class="caption">Kenangan Manis 1</p>
+      </div>
+      <div class="polaroid">
+        <img src="assets/img/moment2.jpg" alt="Moment 2" onerror="this.style.display='none'">
+        <p class="caption">Kenangan Manis 2</p>
+      </div>
+      <div class="polaroid">
+        <img src="assets/img/moment3.jpg" alt="Moment 3" onerror="this.style.display='none'">
+        <p class="caption">Kenangan Manis 3</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. OUR JOURNEY (TIMELINE) -->
+  <section class="section" id="journey">
+    <h2 class="section-title">Our Journey <span class="heart-icon">♡</span></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">🤍</div>
+        <div class="timeline-content">
+          <h3>First Chat</h3>
+          <span class="date">11.11.2024</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">⭐</div>
+        <div class="timeline-content">
+          <h3>Jadian</h3>
+          <span class="date">12.12.2024</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">👑</div>
+        <div class="timeline-content">
+          <h3>Banyak Momen</h3>
+          <span class="date">...</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">♡</div>
+        <div class="timeline-content">
+          <h3>Selamanya</h3>
+          <span class="date">∞</span >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. A LETTER FOR YOU -->
+  <section class="section" id="letter">
+    <h2 class="section-title">A Letter For You <span class="heart-icon">♡</span></h2>
+    <div class="letter-card">
+      <p class="letter-body">
+        Aku tahu aku egois.<br>
+        Aku tahu aku nyebelin.<br>
+        Tapi kamu tetap bertahan.<br>
+        Terima kasih ya, udah selalu ada buat aku.<br>
+        Aku janji bakal jadi orang yang lebih baik buat kamu.<br><br>
+        <strong>Happy (belated) Boyfriend Day, sayang.</strong><br>
+        I love you more than words can say. ♡
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. EASTER EGG & SPECIAL ENDING -->
+  <section class="section" id="ending">
+    <div class="ending-box">
+      <h2>Special Ending</h2>
+      <p class="ending-text">I love you, dummy. Always and forever.</p>
+    </div>
+
+    <div class="easter-egg-box">
+      <h3>Easter Egg ✨</h3>
+      <p>Jangan klik ini! (Psst... coba aja!)</p>
+      <button id="easterBtn" class="btn-secondary">Click me! 🎁</button>
+      <div id="easterMessage" class="hidden-message">
+        <p>🎉 Surpise! Kamu adalah hal terbaik yang pernah hadir di hidupku! ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Dibuat dengan cinta, untuk Alvin. ♡</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

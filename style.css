@@ -1,389 +1,232 @@
-/* RESET & BASE STYLES */
+/* style.css */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg-dark: #12090d;
-  --card-bg: #1f1218;
-  --accent-maroon: #581825;
-  --accent-rose: #d46a84;
-  --accent-gold: #e5c158;
-  --text-light: #fbeee6;
-  --text-muted: #cbb2b8;
-  --border-gold: rgba(229, 193, 88, 0.3);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  overflow-x: hidden;
-  line-height: 1.6;
+    background-color: #1a0a0a; /* Gelap aesthetic */
+    color: #ffcccc; /* Soft red text */
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
-/* MUSIC PLAYER WIDGET */
-.music-player {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: rgba(31, 18, 24, 0.85);
-  border: 1px solid var(--border-gold);
-  backdrop-filter: blur(8px);
-  padding: 8px 15px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+.container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.music-info {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.75rem;
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.song-title {
-  font-weight: 600;
-  color: var(--accent-rose);
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #ff4d4d; /* Merah cerah */
+    margin-top: 20px;
 }
 
-.music-status {
-  color: var(--text-muted);
-  font-size: 0.65rem;
+h2.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff9999;
+    margin-bottom: 40px;
 }
 
-.music-btn {
-  background: var(--accent-maroon);
-  color: var(--text-light);
-  border: 1px solid var(--accent-rose);
-  padding: 5px 12px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 0.75rem;
-  transition: 0.3s;
+/* Animasi untuk Chibi */
+.chibi-img {
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid #ffcccc;
+    box-shadow: 0 0 20px rgba(255, 102, 102, 0.5);
 }
 
-.music-btn:hover {
-  background: var(--accent-rose);
+.opening-content {
+    text-align: center;
 }
 
-/* CHINESE SEAL ACCENT */
-.chinese-seal {
-  width: 45px;
-  height: 45px;
-  background-color: #8b0000;
-  border: 2px solid var(--accent-gold);
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px auto;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(229, 193, 88, 0.2);
+.scroll-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* HERO SECTION */
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background: radial-gradient(circle at center, #2d131d 0%, #12090d 100%);
-}
-
-.chibi-frame img {
-  max-width: 180px;
-  height: auto;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 5px 15px rgba(212, 106, 132, 0.3));
-}
-
-.hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
-  color: var(--accent-rose);
-  margin-bottom: 5px;
-}
-
-.hero-subtitle {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 25px;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent-maroon), var(--accent-rose));
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(212, 106, 132, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 106, 132, 0.5);
-}
-
-/* SECTIONS COMMON */
-.section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-family: 'Cinzel', serif;
-  text-align: center;
-  font-size: 1.8rem;
-  color: var(--accent-rose);
-  margin-bottom: 30px;
-}
-
-.heart-icon {
-  color: var(--accent-rose);
-}
-
-/* ABOUT SECTION */
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.chibi-side img {
-  max-width: 140px;
-}
-
+/* About Section */
 .about-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-gold);
-  border-radius: 15px;
-  padding: 25px;
-  width: 100%;
+    background-color: #260d0d;
+    padding: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid #3d1a1a;
 }
 
-.about-list {
-  list-style: none;
+.about-card ul {
+    list-style: none;
+    text-align: left;
 }
 
-.about-list li {
-  padding: 8px 0;
-  border-bottom: 1px dashed rgba(203, 178, 184, 0.2);
-  color: var(--text-light);
+.about-card li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffe6e6;
 }
 
-.about-list li:last-child {
-  border-bottom: none;
-}
-
-/* GALLERY (OUR MOMENTS) */
+/* Gallery Section */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .polaroid {
-  background: #ffffff;
-  padding: 12px 12px 20px 12px;
-  border-radius: 4px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  text-align: center;
-  transform: rotate(-2deg);
-  transition: transform 0.3s;
+    background-color: white;
+    padding: 15px 15px 25px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transform: rotate(-2deg); /* Aesthetic tilt */
+    transition: transform 0.3s ease;
 }
 
 .polaroid:nth-child(even) {
-  transform: rotate(2deg);
+    transform: rotate(3deg);
 }
 
 .polaroid:hover {
-  transform: scale(1.05) rotate(0deg);
+    transform: rotate(0deg) scale(1.05);
 }
 
 .polaroid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 2px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #ddd;
 }
 
 .polaroid .caption {
-  color: #333;
-  font-family: 'Sacramento', cursive;
-  font-size: 1.2rem;
-  margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: left;
+    line-height: 1.4;
 }
 
-/* TIMELINE (OUR JOURNEY) */
+/* Journey Section */
 .timeline {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin: 40px 0;
-  padding: 0 10px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent-rose);
-  z-index: 1;
-}
-
-.timeline-item {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.timeline-dot {
-  width: 40px;
-  height: 40px;
-  background: var(--card-bg);
-  border: 2px solid var(--accent-rose);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px auto;
-  font-size: 0.9rem;
-}
-
-.timeline-content h3 {
-  font-size: 0.85rem;
-  color: var(--text-light);
-}
-
-.timeline-content .date {
-  font-size: 0.75rem;
-  color: var(--accent-gold);
-}
-
-/* LETTER SECTION */
-.letter-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-gold);
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  position: relative;
-}
-
-.letter-body {
-  font-size: 1rem;
-  color: var(--text-light);
-  line-height: 1.8;
-  text-align: center;
-}
-
-/* EASTER EGG & ENDING */
-.ending-box {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.ending-text {
-  font-size: 1.2rem;
-  color: var(--accent-rose);
-  font-style: italic;
-}
-
-.easter-egg-box {
-  background: rgba(88, 24, 37, 0.3);
-  border: 1px dashed var(--accent-rose);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--accent-rose);
-  border: 1px solid var(--accent-rose);
-  padding: 8px 18px;
-  border-radius: 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-secondary:hover {
-  background: var(--accent-rose);
-  color: white;
-}
-
-.hidden-message {
-  display: none;
-  margin-top: 15px;
-  font-weight: 600;
-  color: var(--accent-gold);
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  border-top: 1px solid rgba(229, 193, 88, 0.1);
-}
-
-/* RESPONSIVE DESIGN (HP) */
-@media (max-width: 600px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .timeline {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding-left: 20px;
-  }
-
-  .timeline::before {
-    top: 0;
-    bottom: 0;
-    left: 39px;
-    width: 2px;
-    height: 100%;
-  }
-
-  .timeline-item {
+.checkpoint {
     display: flex;
     align-items: center;
-    gap: 15px;
-    text-align: left;
-  }
-
-  .timeline-dot {
-    margin: 0;
-  }
+    margin-bottom: 30px;
 }
+
+.checkpoint .icon {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.checkpoint .time {
+    font-weight: 600;
+    color: #ffcccc;
+}
+
+.checkpoint .desc {
+    color: #ffe6e6;
+}
+
+/* Letter Section */
+.letter-card {
+    background-color: #260d0d;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #3d1a1a;
+    max-width: 800px;
+}
+
+.letter-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ffe6e6;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #ff4d4d !important;
+    text-align: right;
+    margin-top: 30px;
+}
+
+/* Music Player Style */
+.music-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(38, 13, 13, 0.8);
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    border: 1px solid #3d1a1a;
+}
+
+.song-title {
+    color: #ffcccc;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+#music-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ----- ANIMASI-ANIMASI UTAMA ----- */
+
+/* 1. Animasi Mengambang (Floating) untuk Chibi */
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }
+}
+
+/* 2. Animasi Muncul Perlahan (Fade In) saat Scroll */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 2s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+   
